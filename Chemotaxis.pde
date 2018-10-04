@@ -1,4 +1,4 @@
-boolean randomwalk = false;
+boolean randomwalk = true;
 Bacteria [] one;  
  void setup()   
  {     
@@ -11,19 +11,23 @@ Bacteria [] one;
  }   
  void draw()   
  {    
- 	//background(250);
+ 
  	for (int i = 0; i < one.length; i++)
  	{
  		one[i].show();
  		one[i].move();		
  	}
- 	
+
  } 
 
- void mousepressed()
+ void mousePressed()
  {
- 	randomwalk = false;
- 	redraw();
+ 	if (randomwalk == true)
+ 		randomwalk = false;
+ 	else if (randomwalk == false) {
+ 		randomwalk = true;	
+ 	}
+ 	
  } 
  class Bacteria    
  {  
